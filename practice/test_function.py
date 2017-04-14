@@ -13,3 +13,5 @@ def fn(x, y):
     return x*10+y
 
 print(reduce(fn, [1, 3, 5, 7]))
+
+print(sorted(['Are', 'you', 'good', 'Hello'], key=str.lower, reverse=True))
