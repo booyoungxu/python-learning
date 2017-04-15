@@ -63,5 +63,18 @@ def fib(n):
     return 'finished'
 print(fib(6))
 
-for c in fib(6):
-    print(c)
+# for c in fib(6):
+#     print(c)
+
+# 对list进行enumerate可以得到index和value
+LL = ['ab', 'cd', 'ef', 'hg']
+# for v1, index1 in enumerate(LL):
+#     print(v1, index1)
+
+# list的insert表示在index的地方插入value，若一直在list的0位置插入元素，即为倒插
+next = []
+for index2, v2 in enumerate(LL[::-1]):
+    # print(v2, index2)
+    # print('v2 = %s' % v2)
+    next.insert(0, v2)
+# print(next)
