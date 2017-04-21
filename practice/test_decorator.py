@@ -70,3 +70,26 @@ def wawa():
 
 
 # wawa()
+
+# @property 将方法变成属性调用，可以实现对属性的赋值检查
+
+class Student():
+    @property
+    def score(self):
+        return self._score
+
+    @score.setter
+    def score(self, value):
+        if not isinstance(value, int):
+            raise ValueError('bad value')
+        elif value < 0 or value > 100:
+            raise ValueError('scope wrong')
+        self._score = value
+# 若一个属性没有setter，则为一个只读属性
+    @property
+    def age(self):
+        return 100-self._score
+
+student = Student()
+student.score = 99
+# print(student.score)
