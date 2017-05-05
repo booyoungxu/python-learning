@@ -40,7 +40,7 @@ class TreeNode:
         self.split_dim = split_dim
 
 kd_data = np.array([[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]])
-aim_data = [3, 7]
+aim_data = [6, 1]
 
 
 def build_kd_tree(data, depth, dim):
@@ -97,6 +97,7 @@ def search_data(cur_node, data, heap):
         if top_distance > distance:
             top_distance, top_node = distance, cur_node.data
             heapq.heappushpop(heap, (top_distance, top_node))
+        print('right', right.data)
         search_data(right, data, heap)
 
 if __name__ == '__main__':
